@@ -70,19 +70,24 @@ string Board::get_obstacle_tile(int loc) {
             string tile;
             char dir = obstacles[t].get_direction();
             if(dir == 'F'){
-                tile += "+F";
+                tile += "\033[35m+F";
                 tile += obstacles[t].get_str_distance();
-                tile += "+|";
+                if(obstacles[t].get_distance() < 10) {
+                    tile += "+\033[34m|";
+                }
+                else{
+                    tile += "\033[34m|";
+                }
                 return tile;
             }
             else{
-                tile += "-B";
+                tile += "\033[36m-B";
                 tile += obstacles[t].get_str_distance();
                 if(obstacles[t].get_distance() < 10){
-                    tile += "-|";
+                    tile += "-\033[34m|";
                 }
                 else{
-                    tile += "|";
+                    tile += "\033[34m|";
                 }
                 return tile;
             }

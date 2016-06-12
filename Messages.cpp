@@ -66,6 +66,6 @@ void Messages::print_winner(int winner, string name) {
             }
         }
         // Last line is a row of hashes
-        cout << endl << lines[3] << endl;
+        cout << endl << lines[3] << "\033[39m" << endl;
     }
 }
