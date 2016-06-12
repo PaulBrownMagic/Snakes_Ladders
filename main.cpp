@@ -2,12 +2,15 @@
 #include "Dice.h"
 #include "Player.h"
 #include "Board.h"
+#include "Messages.h"
 
 using namespace std;
 
 int main() {
     bool is_gameover = false;
     int turn = 0;
+    Messages messages;
+    messages.print_welcome();
     Dice dice;
     Player player1;
     Player player2;
@@ -28,17 +31,19 @@ int main() {
         if(player1.get_position() == board.get_length() || player2.get_position() == board.get_length()) {
             is_gameover = true;
         }
-        turn = 1 - turn;
+        else {
+            turn = 1 - turn;
+        }
 
         // Display update
         board.print(player1.get_position(), player2.get_position());
     }
 // Game Over
     if(player1.get_position() == board.get_length()) {
-        cout << "Congratulations!" << endl << player1.get_name() <<" WINS!" << endl;
+        messages.print_winner(turn, player1.get_name());
     }
     else {
-        cout << "Congratulations!" << endl << player2.get_name() <<" WINS!" << endl;
+        messages.print_winner(turn, player2.get_name());
     }
     return 0;
 }

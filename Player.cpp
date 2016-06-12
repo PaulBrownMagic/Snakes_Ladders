@@ -7,7 +7,7 @@
 
 Player::Player() {
     position = 1;
-    cout << "Enter Player's name: ";
+    cout << "Enter Player's name:  ";
     getline(cin, name);
 }
 

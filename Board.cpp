@@ -11,6 +11,7 @@ int Board::get_length() {
 }
 
 void Board::print(int p1_pos, int p2_pos) {
+    cout << endl;
     for(int row = 0; row < 7; row++){
         cout << "|";
         for(int elem = 0; elem < 7; elem++){

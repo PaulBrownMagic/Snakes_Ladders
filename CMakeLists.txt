@@ -3,5 +3,5 @@ project(Snakes_Ladders)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-set(SOURCE_FILES main.cpp Dice.cpp Dice.h Player.cpp Player.h Board.cpp Board.h)
+set(SOURCE_FILES main.cpp Dice.cpp Dice.h Player.cpp Player.h Board.cpp Board.h Messages.cpp Messages.h)
 add_executable(Snakes_Ladders ${SOURCE_FILES})

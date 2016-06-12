@@ -1,0 +1,7 @@
+########################################
+########## Snakes and Ladders ##########
+########################################
+
+Welcome to console Snakes and Ladders,
+written in C++ by Paul Brown. This game
+requires two players. Let's play!
