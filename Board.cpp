@@ -13,17 +13,17 @@ int Board::get_length() {
 void Board::print(int p1_pos, int p2_pos) {
     cout << endl;
     for(int row = 0; row < 7; row++){
-        cout << "|";
+        cout << "\033[34m" << "|";
         for(int elem = 0; elem < 7; elem++){
             int tile = tiles[row][elem];
             if(tile == p1_pos && tile == p2_pos){
-                cout << "P1P2|";
+                cout << "\033[33m" << "P1" << "\033[31m" << "P2" << "\033[34m|";
             }
             else if(tile == p1_pos){
-                cout << "*P1*|";
+                cout << "\033[33m" <<"*P1*" << "\033[34m|";
             }
             else if(tile == p2_pos){
-                cout << "*P2*|";
+                cout << "\033[31m" << "*P2*" << "\033[34m|";
             }
             else if (tile < 10){
                 cout << " 0" << tile << " |";
@@ -32,7 +32,7 @@ void Board::print(int p1_pos, int p2_pos) {
                 cout << " " << tile << " |";
             }
         }
-        cout << endl;
+        cout << "\033[39m" << endl;
     }
     cout << endl;
 }

@@ -16,13 +16,13 @@ int Dice::roll() {
     die1 = rand() % 6 + 1;
     die2 = rand() % 6 + 1;
     if(die1 == die2){
-        cout << "You rolled double " << die1 << endl;
-        cout << "Move back " << die1 << " spaces" << endl;
+        cout << "\033[35m" << "You rolled\033[36m double " << die1 << "\033[35m" << endl;
+        cout << "Move back " << "\033[36m" << die1 << "\033[35m" << " spaces" << endl << "\033[39m";
         return -die1;
     }
     else{
-        cout << "You rolled a " << die1 << " and a " << die2 << endl;
-        cout << "Move forward " << die1 + die2 << " spaces." << endl;
+        cout << "\033[36m" <<  "You rolled a " << die1 << " and a " << die2 << endl;
+        cout << "Move forward " << "\033[35m" << die1 + die2 << "\033[36m"<< " spaces." << endl << "\033[39m";
         return die1 + die2;
     }
 }

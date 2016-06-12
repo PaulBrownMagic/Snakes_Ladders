@@ -16,7 +16,7 @@ void Messages::print_welcome() {
     else {
         while(!reader.eof()) {
             getline(reader, line);
-            cout << line << endl;
+            cout << "\033[31m" << line << "\033[39m" << endl;
         }
     }
     reader.close();
@@ -36,6 +36,12 @@ void Messages::print_winner(int winner, string name) {
             getline(reader, lines[line]);
         }
         // First line of hashes
+        if(winner == 0){
+            cout << "\033[33m";
+        }
+        else {
+            cout << "\033[31m";
+        }
         cout << lines[3] << endl;
         // Second line selected for which player has won
         cout << lines[winner] << endl;
