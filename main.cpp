@@ -7,7 +7,7 @@
 using namespace std;
 
 int main() {
-    bool is_gameover = false;
+    bool is_game_over = false;
     int turn = 0;
     Messages messages;
     messages.print_welcome();
@@ -17,7 +17,7 @@ int main() {
     Board board;
     board.print(player1.get_position(), player2.get_position());
 
-    while(not is_gameover){
+    while(not is_game_over){
         // Event Handling
         if(turn == 0){
             cout << player1.get_name() << ": ";
@@ -28,10 +28,12 @@ int main() {
             player2.move(dice.roll(), board.get_length());
         }
         // Run Logic
+           // Check for obstacles
         player1.move(board.obstacle_act(player1.get_position()), board.get_length());
         player2.move(board.obstacle_act(player2.get_position()), board.get_length());
+          // Check for game over
         if(player1.get_position() == board.get_length() || player2.get_position() == board.get_length()) {
-            is_gameover = true;
+            is_game_over = true;
         }
         else {
             turn = 1 - turn;
