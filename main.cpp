@@ -28,6 +28,8 @@ int main() {
             player2.move(dice.roll(), board.get_length());
         }
         // Run Logic
+        player1.move(board.obstacle_act(player1.get_position()), board.get_length());
+        player2.move(board.obstacle_act(player2.get_position()), board.get_length());
         if(player1.get_position() == board.get_length() || player2.get_position() == board.get_length()) {
             is_gameover = true;
         }

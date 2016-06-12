@@ -5,6 +5,9 @@
 #ifndef SNAKES_LADDERS_BOARD_H
 #define SNAKES_LADDERS_BOARD_H
 
+#include "Obstacle.h"
+#include <vector>
+
 
 class Board {
 private:
@@ -18,9 +21,16 @@ private:
             {1, 2, 3, 4, 5, 6, 7}
     };
     int length = tiles[0][6];
+    vector <Obstacle> obstacles;
+    vector <int> obstacle_locations;
+    string get_obstacle_tile(int loc);
+    int number_of_obstacles;
+    bool tile_is_obstacle(int tile);
 public:
+    Board();
     int get_length();
     void print(int p1_pos, int p2_pos);
+    int obstacle_act(int pos);
 };
 
 
