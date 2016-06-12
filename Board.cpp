@@ -33,4 +33,5 @@ void Board::print(int p1_pos, int p2_pos) {
         }
         cout << endl;
     }
+    cout << endl;
 }

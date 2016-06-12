@@ -16,6 +16,9 @@ int Player::move(int spaces, int board_length) {
     if(position > board_length){
         position = board_length;
     }
+    else if (position < 1) {
+        position = 1;
+    }
     return position;
 }
 

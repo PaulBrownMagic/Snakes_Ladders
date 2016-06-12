@@ -7,7 +7,7 @@
 using namespace std;
 
 Dice::Dice() {
-    srand(time(NULL));
+    srand(static_cast<unsigned int>(time(NULL)));
 }
 
 int Dice::roll() {
