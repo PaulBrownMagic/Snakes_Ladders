@@ -63,7 +63,7 @@ void Board::print(int p1_pos, int p2_pos) {
 }
 
 string Board::get_obstacle_tile(int loc) {
-    for(int t = 0; t < number_of_obstacles; t++){
+    for(unsigned int t = 0; t < number_of_obstacles; t++){
         if(obstacle_locations[t] == loc){
             string tile;
             char dir = obstacles[t].get_direction();
@@ -95,7 +95,7 @@ string Board::get_obstacle_tile(int loc) {
 }
 
 int Board::obstacle_act(int pos) {
-    for (int t = 0; t < number_of_obstacles; t++) {
+    for (unsigned int t = 0; t < number_of_obstacles; t++) {
         if (obstacle_locations[t] == pos) {
             if(obstacles[t].get_direction() == 'F'){
                 cout << "You hit an obstacle! Move forward " << obstacles[t].get_distance() << " spaces" << endl;

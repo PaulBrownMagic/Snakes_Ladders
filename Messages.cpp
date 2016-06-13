@@ -32,7 +32,7 @@ void Messages::print_winner(int winner, string name) {
     }
     else {
         // Store file lines in an array, ready to be manipulated
-        for(int line = 0; line < 4; line ++){
+        for(short unsigned int line = 0; line < 4; line ++){
             getline(reader, lines[line]);
         }
         // First line of hashes
@@ -48,20 +48,20 @@ void Messages::print_winner(int winner, string name) {
         // Third line is hashes
         cout << lines[3] << endl;
         // Start of fourth line, works out how many hashes to print to center text
-        for(int h = 0; h < (lines[3].size() - (name.size() + lines[2].size()))/2 - 1; h++ ){
+        for(unsigned long h = 0, l = (lines[3].size() - (name.size() + lines[2].size()))/2 - 1; h < l; h++ ){
             cout << "#";
         }
         // Print the text with spaces
         cout << " " << name << lines[2] << " ";
         // An even name gets same number of hashes as at the start of the line
         if(name.size() % 2 == 0) {
-            for (int h = 0; h < (lines[3].size() - (name.size() + lines[2].size())) / 2 - 1; h++) {
+            for (unsigned long h = 0, l = (lines[3].size() - (name.size() + lines[2].size())) / 2 - 1; h < l; h++) {
                 cout << "#";
             }
         }
             // An odd number gets one more
         else {
-            for (int h = 0; h < (lines[3].size() - (name.size() + lines[2].size())) / 2; h++) {
+            for (unsigned long h = 0, l = (lines[3].size() - (name.size() + lines[2].size())) / 2; h < l; h++) {
                 cout << "#";
             }
         }
