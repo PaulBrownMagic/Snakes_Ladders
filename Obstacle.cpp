@@ -5,13 +5,12 @@
 #include "Obstacle.h"
 #include <sstream>
 
-Obstacle::Obstacle(string loc, char dir, string dis) {
+Obstacle::Obstacle(string loc, char dir, string dis) : direction(dir) {
     stringstream stream;
     stream << loc;
     stream >> location;
     stream.str("");
     stream.clear();
-    direction = dir;
     stream << dis;
     stream >> distance;
 }

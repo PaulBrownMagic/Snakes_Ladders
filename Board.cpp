@@ -7,8 +7,7 @@
 #include <fstream>
 using namespace std;
 
-Board::Board() {
-    number_of_obstacles = 0;
+Board::Board() : number_of_obstacles(0) {
     ifstream reader("/home/brown/ClionProjects/Snakes&Ladders/obstacles");
     if(!reader){
         cout << "Error, could not read obstacles input file" << endl;

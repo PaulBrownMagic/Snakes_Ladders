@@ -5,8 +5,7 @@
 #include "Player.h"
 #include <iostream>
 
-Player::Player() {
-    position = 1;
+Player::Player() : position(1) {
     cout << "Enter Player's name:  ";
     getline(cin, name);
 }
