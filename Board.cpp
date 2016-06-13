@@ -19,9 +19,8 @@ Board::Board() {
             getline(reader, line);
             unsigned long f_comma = line.find_first_of(",");
             unsigned long l_comma = line.find_last_of(",");
-            Obstacle obs;
-            obs.set_obstacle(line.substr(0, f_comma), line.at(f_comma + 1),
-                             line.substr(l_comma+1,line.size()-l_comma));
+            Obstacle obs(line.substr(0, f_comma), line.at(f_comma + 1),
+                         line.substr(l_comma+1,line.size()-l_comma));
             obstacles.push_back(obs);
             obstacle_locations.push_back(obstacles[number_of_obstacles].get_location());
             number_of_obstacles += 1;
@@ -36,10 +35,9 @@ int Board::get_length() {
 
 void Board::print(int p1_pos, int p2_pos) {
     cout << endl;
-    for(int row = 0; row < 7; row++){
+    for(auto &row: tiles){
         cout << "\033[34m" << "|";
-        for(int elem = 0; elem < 7; elem++){
-            int tile = tiles[row][elem];
+        for(auto tile: row){
             if(tile == p1_pos && tile == p2_pos){
                 cout << "\033[33m" << "P1" << "\033[31m" << "P2" << "\033[34m|";
             }
@@ -114,8 +112,8 @@ int Board::obstacle_act(int pos) {
 }
 
 bool Board::tile_is_obstacle(int tile) {
-    for(int i = 0; i < obstacle_locations.size(); i++){
-        if(obstacle_locations[i] == tile){
+    for(auto loc: obstacle_locations){
+        if(loc == tile){
             return true;
         }
     }

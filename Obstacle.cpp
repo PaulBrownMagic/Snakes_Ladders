@@ -5,7 +5,7 @@
 #include "Obstacle.h"
 #include <sstream>
 
-void Obstacle::set_obstacle(string loc, char dir, string dis) {
+Obstacle::Obstacle(string loc, char dir, string dis) {
     stringstream stream;
     stream << loc;
     stream >> location;

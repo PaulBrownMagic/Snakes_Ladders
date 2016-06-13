@@ -14,7 +14,7 @@ private:
     char direction;
     int distance;
 public:
-    void set_obstacle(string loc, char dir, string dis);
+    Obstacle(string loc, char dir, string dis);
     int get_location();
     char get_direction();
     int get_distance();
